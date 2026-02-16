@@ -1,0 +1,79 @@
+# DataScope Enhanced Standalone - Docker Compose
+version: "3.8"
+
+services:
+  # Main DataScope application (Python backend + React frontend)
+  datascope:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: datascope-standalone
+    restart: unless-stopped
+    ports:
+      - "${PORT:-5000}:5000"
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=${SECRET_KEY:-change-me-in-production}
+      - DATABASE_URL=sqlite:///database/app.db
+      - CACHE_DIRECTORY=/app/cache
+      - OUTPUT_DIRECTORY=/app/reports
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - NLQ_ENABLED=true
+      - AUTO_REPORT_ENABLED=true
+    volumes:
+      - ./cache:/app/cache
+      - ./reports:/app/reports
+      - ./database:/app/database
+    networks:
+      - datascope-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Optional: Redis cache for production scaling
+  redis:
+    image: redis:7-alpine
+    container_name: datascope-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    networks:
+      - datascope-network
+    profiles:
+      - cache
+
+  # Development mode
+  datascope-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: datascope-dev
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    command: ["python", "main.py"]
+    profiles:
+      - dev
+    networks:
+      - datascope-network
+
+volumes:
+  redis_data:
+    driver: local
+
+networks:
+  datascope-network:
+    driver: bridge
