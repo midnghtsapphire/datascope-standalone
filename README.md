@@ -505,3 +505,12 @@ Proprietary — All rights reserved by Audrey Evans.
 
 *DataScope Enhanced provided by free sources and APIs. Built with Python, Flask, React, and Vite.*
 
+
+---
+
+## Test
+
+| Feature | Status |
+|---------|--------|
+| Feature | ✅ Ready |
+
