@@ -1,0 +1,9 @@
+{
+  "name": "datascope-standalone-revvel-baseline",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node scripts/test-baseline.js",
+    "build": "node scripts/build-baseline.js"
+  }
+}
