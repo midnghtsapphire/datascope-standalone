@@ -124,6 +124,10 @@ social_data = datascope.collect_with_browser_automation('lemon8', credentials)
 - [GO_TO_MARKET.md](GO_TO_MARKET.md)
 - [BRAND_GUIDELINES.md](BRAND_GUIDELINES.md)
 - [SECURITY.md](SECURITY.md)
+- [RESEARCH_ENGINES.md](RESEARCH_ENGINES.md)
+- [SUGGESTIONS.md](SUGGESTIONS.md)
+- [ASSET_INVENTORY.md](ASSET_INVENTORY.md)
+- [ARTIFACTS.md](ARTIFACTS.md)
 
 ### Website in Test (Vercel)
 

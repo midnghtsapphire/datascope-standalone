@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file.
   - `GO_TO_MARKET.md`
   - `BRAND_GUIDELINES.md`
   - `SECURITY.md`
+- S2M expansion artifacts requested in PR feedback:
+  - `RESEARCH_ENGINES.md`
+  - `SUGGESTIONS.md`
+  - `ASSET_INVENTORY.md`
+  - `ARTIFACTS.md`
 - Baseline manifest and validation scripts:
   - `package.json`
   - `scripts/test-baseline.js`

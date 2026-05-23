@@ -8,6 +8,10 @@ const requiredFiles = [
   'GO_TO_MARKET.md',
   'BRAND_GUIDELINES.md',
   'SECURITY.md',
+  'RESEARCH_ENGINES.md',
+  'SUGGESTIONS.md',
+  'ASSET_INVENTORY.md',
+  'ARTIFACTS.md',
 ];
 
 const missing = requiredFiles.filter((file) => !fs.existsSync(path.resolve(process.cwd(), file)));
