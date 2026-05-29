@@ -115,6 +115,19 @@ credentials = {'username': 'your_username', 'password': 'your_password'}
 social_data = datascope.collect_with_browser_automation('lemon8', credentials)
 ```
 
+## ✅ Revvel Standards Artifacts
+
+- `README.md`
+- `CHANGELOG.md`
+- `DEPLOYMENT_GUIDE.md`
+- `GO_TO_MARKET.md`
+- `BRAND_GUIDELINES.md`
+- `SECURITY.md`
+
+### Website in Test (Vercel)
+- Frontend project path: `cybersecurity-threat-dashboard/`
+- Deployment target: Vercel preview/production for UI testing
+
 ## 📖 Detailed Documentation
 
 ### Revvel-Standards (S2M) Documents
