@@ -9,7 +9,7 @@ This guide covers a production-oriented deployment path for DataScope Standalone
 
 - Python 3.11+
 - Node.js 20+
-- npm 10+
+- npm 10+ (for root baseline scripts)
 - Docker (optional)
 
 ## 2) Local validation
@@ -23,8 +23,9 @@ If frontend dependencies are needed:
 
 ```bash
 cd cybersecurity-threat-dashboard
-npm install
-npm run build
+corepack enable
+pnpm install --frozen-lockfile
+pnpm build
 ```
 
 ## 3) Environment setup
