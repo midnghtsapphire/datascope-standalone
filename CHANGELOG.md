@@ -1,16 +1,22 @@
 # Changelog
 
-All notable changes to this project are documented in this file.
+All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
 ### Added
-- Revvel-standards documentation set for ship-to-market readiness:
+- Revvel-standards ship-to-market documentation set:
+  - `CHANGELOG.md`
   - `DEPLOYMENT_GUIDE.md`
   - `GO_TO_MARKET.md`
   - `BRAND_GUIDELINES.md`
   - `SECURITY.md`
-- Root baseline validation manifest (`package.json`) with:
-  - `npm test` → `scripts/test-baseline.js`
-  - `npm run build` → `scripts/build-baseline.js`
-- Baseline validation scripts in `scripts/`.
+- S2M expansion artifacts requested in PR feedback:
+  - `RESEARCH_ENGINES.md`
+  - `SUGGESTIONS.md`
+  - `ASSET_INVENTORY.md`
+  - `ARTIFACTS.md`
+- Baseline manifest and validation scripts:
+  - `package.json`
+  - `scripts/test-baseline.js`
+  - `scripts/build-baseline.js`

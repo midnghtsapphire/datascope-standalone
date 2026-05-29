@@ -1,32 +1,38 @@
-# Go To Market
+# Go-To-Market (S2M)
 
-## What this repository does
-DataScope Standalone is a cybersecurity and multi-domain intelligence platform with a Flask API + React dashboard for operational monitoring, analytics, and reporting.
+## Repository value
 
-## How it can be used now
-- SOC-style monitoring for vulnerability and advisory signals
-- Threat intelligence reporting for operations and leadership
-- Data collection and enrichment workflows across domains
+DataScope Standalone combines automated data collection, AI-assisted analysis, and cybersecurity-focused reporting into one deployable product. It can be used today for:
+- Threat intelligence monitoring
+- Cross-domain data collection workflows
+- Executive reporting and operational dashboards
 
-## Project analysis (value and goal priority)
-- **Primary value:** reduces time-to-insight for risk and threat decisions.
-- **Priority:** high, because cyber-risk posture is a recurring operational need.
-- **Goal fit:** supports recurring subscription/service revenue through dashboard access, reporting, and managed intelligence workflows.
+## Goal priority
 
-## Market signals and sourced research
-1. IBM reports the global average cost of a data breach reached **$4.88M** in 2024, increasing demand for proactive security tooling.  
-   Source: https://www.ibm.com/reports/data-breach
-2. CISA KEV catalog growth reinforces continuous vulnerability prioritization needs in enterprise workflows.  
-   Source: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
-3. Global cybersecurity spending continues to rise, supporting sustained demand for threat intel products.  
-   Source: https://www.gartner.com/en/newsroom/press-releases
+1. Deliver a production-ready intelligence workflow end-to-end.
+2. Ship a testable web surface for validation and demos.
+3. Convert operational value into recurring B2B usage.
 
-## Revenue framing (working model)
-- **Starter team plan:** $199–$499/month
-- **Pro operations plan:** $999–$2,499/month
-- **Managed intelligence add-on:** custom services + reporting retainers
+## Market rationale (high-level)
 
-## Initial launch strategy
-1. Ship hosted dashboard + API with onboarding docs.
-2. Target security consultancies and SMB IT teams first.
-3. Use proof-of-value pilots (30 days) and convert to annual contracts.
+- Cybersecurity analytics and threat intelligence remain high-priority spend categories for organizations with growing attack surfaces.
+- Teams need practical automation that reduces manual monitoring and report creation effort.
+- A standalone deployable platform lowers adoption friction for organizations that cannot use fully managed SaaS.
+
+## Competitive differentiation
+
+- Prompt-driven collection strategy generation
+- Browser automation for platforms lacking APIs
+- Domain-extensible architecture (cybersecurity, real-estate, social, healthcare)
+- Built-in reporting pipeline for leadership-ready outputs
+
+## Revenue projection model (planning baseline)
+
+Scenario target: **$10M cumulative revenue over 3 years**
+
+Example path:
+- Year 1: $1.5M (pilot + early annual contracts)
+- Year 2: $3.0M (expansion + add-on services)
+- Year 3: $5.5M (scaled enterprise adoption)
+
+This projection is directional and should be updated quarterly with live pipeline metrics.

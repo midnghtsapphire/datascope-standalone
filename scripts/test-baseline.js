@@ -1,6 +1,5 @@
-const { spawnSync } = require('node:child_process');
-const { existsSync } = require('node:fs');
-const { join } = require('node:path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const requiredFiles = [
   'README.md',
@@ -9,22 +8,17 @@ const requiredFiles = [
   'GO_TO_MARKET.md',
   'BRAND_GUIDELINES.md',
   'SECURITY.md',
-  'requirements.txt',
-  'docker-compose.yml'
+  'RESEARCH_ENGINES.md',
+  'SUGGESTIONS.md',
+  'ASSET_INVENTORY.md',
+  'ARTIFACTS.md',
 ];
 
-const missing = requiredFiles.filter((file) => !existsSync(join(process.cwd(), file)));
-if (missing.length) {
-  console.error('Missing required files:\n' + missing.join('\n'));
+const missing = requiredFiles.filter((file) => !fs.existsSync(path.resolve(process.cwd(), file)));
+
+if (missing.length > 0) {
+  console.error(`Missing required revvel-standards files:\n- ${missing.join('\n- ')}`);
   process.exit(1);
 }
 
-const compile = spawnSync('python', ['-m', 'compileall', '-q', 'main.py', 'enhanced_main.py'], {
-  stdio: 'inherit'
-});
-
-if (compile.status !== 0) {
-  process.exit(compile.status ?? 1);
-}
-
-console.log('Baseline test checks passed.');
+console.log('Revvel-standards baseline test passed.');

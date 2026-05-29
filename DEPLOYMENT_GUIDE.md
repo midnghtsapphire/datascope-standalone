@@ -1,46 +1,67 @@
 # Deployment Guide
 
-## Deployment Targets
-- **Website in test (Vercel):** deploy `cybersecurity-threat-dashboard/` as the frontend surface.
-- **Backend/API (Docker):** deploy root Flask service via Docker/Gunicorn.
+This guide covers a production-oriented deployment path for DataScope Standalone with:
+- Python backend services
+- React dashboard build pipeline
+- Website in Test hosted on Vercel
 
-## 1) Local Production Validation
+## 1) Prerequisites
+
+- Python 3.11+
+- Node.js 20+
+- npm 10+ (for root baseline scripts)
+- Corepack (to provision pnpm for frontend build steps)
+- Docker (optional)
+
+## 2) Local validation
+
 ```bash
 npm test
 npm run build
-docker compose build datascope
-docker compose up -d datascope
 ```
 
-Verify status:
-```bash
-curl -f http://localhost:5000/api/status
-```
+If frontend dependencies are needed:
 
-## 2) Frontend Deploy (Vercel)
-Deploy the dashboard directory:
 ```bash
 cd cybersecurity-threat-dashboard
-npm install --legacy-peer-deps
-npm run build
+corepack enable
+pnpm install --frozen-lockfile
+pnpm build
 ```
 
-Then deploy with Vercel CLI or Vercel Git integration.
+## 3) Environment setup
 
-## 3) Backend Deploy (Container)
+1. Copy `.env.example` to `.env`.
+2. Set production values for:
+   - API keys
+   - database/cache connection strings
+   - security-sensitive tokens
+
+Never commit `.env` files.
+
+## 4) Backend deployment
+
+### Option A — Docker Compose
+
 ```bash
-docker compose build datascope
-docker compose up -d datascope
+docker compose up --build -d
 ```
 
-Required environment variables:
-- `SECRET_KEY`
-- `DATABASE_URL`
-- `LOG_LEVEL`
-- `VITE_API_BASE_URL` (frontend build/runtime)
+### Option B — Python process
 
-## 4) Post-Deploy Checklist
-- API health endpoint returns 200
-- Frontend loads and calls backend successfully
-- Reports can be generated to `reports/`
-- Security headers and secret values verified
+```bash
+pip install -r requirements.txt
+python enhanced_main.py
+```
+
+## 5) Frontend deployment (Website in Test)
+
+- Target test URL: `https://datascope-standalone.vercel.app`
+- Deploy using Vercel Git integration from this repository.
+
+## 6) Deployment automation reference
+
+- Baseline checks are codified in:
+  - `scripts/test-baseline.js`
+  - `scripts/build-baseline.js`
+- Run these checks in CI prior to production promotion.

@@ -130,6 +130,23 @@ social_data = datascope.collect_with_browser_automation('lemon8', credentials)
 
 ## 📖 Detailed Documentation
 
+### Revvel-Standards (S2M) Documents
+
+- [CHANGELOG.md](CHANGELOG.md)
+- [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+- [GO_TO_MARKET.md](GO_TO_MARKET.md)
+- [BRAND_GUIDELINES.md](BRAND_GUIDELINES.md)
+- [SECURITY.md](SECURITY.md)
+- [RESEARCH_ENGINES.md](RESEARCH_ENGINES.md)
+- [SUGGESTIONS.md](SUGGESTIONS.md)
+- [ASSET_INVENTORY.md](ASSET_INVENTORY.md)
+- [ARTIFACTS.md](ARTIFACTS.md)
+
+### Website in Test (Vercel)
+
+- Test URL: https://datascope-standalone.vercel.app
+- Deployment automation reference: `npm test` and `npm run build` (see `scripts/`)
+
 ### Architecture Overview
 
 DataScope Enhanced follows a modular architecture:
@@ -526,4 +543,3 @@ Proprietary — All rights reserved by Audrey Evans.
 | Feature | Status |
 |---------|--------|
 | Feature | ✅ Ready |
-
