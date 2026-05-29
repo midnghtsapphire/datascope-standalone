@@ -10,6 +10,7 @@ This guide covers a production-oriented deployment path for DataScope Standalone
 - Python 3.11+
 - Node.js 20+
 - npm 10+ (for root baseline scripts)
+- Corepack (to provision pnpm for frontend build steps)
 - Docker (optional)
 
 ## 2) Local validation
