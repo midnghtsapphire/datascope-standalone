@@ -1,5 +1,9 @@
 # DataScope Enhanced — Standalone
 
+
+<!-- AUTO-PACKAGE-BADGES:START -->
+
+<!-- AUTO-PACKAGE-BADGES:END -->
 > AI-powered multi-domain data intelligence platform with natural language querying, auto-generated reports, and cybersecurity threat analysis.
 
 DataScope Enhanced is a fully standalone data intelligence platform that combines a Python Flask backend with a React cybersecurity threat dashboard. It uses intelligent prompts, browser automation, and smart caching to gather data from any source — including platforms without APIs like Lemon8, Instagram, and LinkedIn.
